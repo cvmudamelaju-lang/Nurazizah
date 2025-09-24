@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun Sayangku</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Dancing Script', cursive;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Tambahan efek goyang halus */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.gallery img {
+  /* Efek hover tetap */
+  animation: fadeUp 1.5s forwards, float 6s ease-in-out infinite;
+}
+
+    /* Video Background */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    /* Galeri Foto */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Tombol Musik */
+    .music-btn {
+      margin-top: 20px;
+      background: #ff4081;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .music-btn:hover {
+      background: #e91e63;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8em; }
+      p { font-size: 1em; padding: 0 10px; }
+    }
+  </style>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="BAGROUND.mp4" type="video/mp4">
+    Browser Anda tidak mendukung video.
+  </video>
+
+  <div class="overlay">
+    <h1>Selamat Ulang Tahun ke-23, Sayangku ❤️</h1>
+    <p>Semoga di usia yang baru ini, semua impianmu tercapai, rezekimu dilancarkan, dan kita selalu bersama dalam suka maupun duka. 
+    Kamu adalah hadiah terindah dalam hidupku. Aku sayang kamu selamanya 💕</p>
+
+    <!-- Tombol Musik -->
+    <button class="music-btn" onclick="toggleMusic()">🎵 Putar Musik</button>
+
+    <!-- Galeri Foto -->
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+      <img src="foto5.jpg" alt="Foto 5">
+      <img src="foto6.jpg" alt="Foto 6">
+      <img src="foto7.jpg" alt="Foto 7">
+      <img src="foto8.jpg" alt="Foto 8">
+    </div>
+  </div>
+
+  <!-- Musik -->
+  <audio id="bg-music" loop>
+    <source src="happy.mp3.mp3" type="audio/mp3">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const btn = document.querySelector(".music-btn");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.innerText = "⏸️ Hentikan Musik";
+      } else {
+        music.pause();
+        btn.innerText = "🎵 Putar Musik";
+      }
+    }
+  </script>
+
+</body>
+</html> ubah poto nya menjadi bergerak ke samping 
